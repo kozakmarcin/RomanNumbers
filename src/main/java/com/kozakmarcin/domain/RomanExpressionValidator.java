@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RomanExpressionValidator {
-    private static final String REGEX_PATTERN = "^[IVXLCDM]*$";
+    private static final String REGEX_PATTERN = "^M{0,3}(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$";
 
-     public String validate(String possibleRomanianExpression){
+    public String validate(String possibleRomanianExpression){
          Pattern compiledRegexPattern = Pattern.compile(REGEX_PATTERN);
          Matcher matcher =compiledRegexPattern.matcher(possibleRomanianExpression);
 
@@ -15,6 +15,6 @@ public class RomanExpressionValidator {
          } else {
              throw new RuntimeException("'" + possibleRomanianExpression + "' is not a valid romanian number");
          }
-     }
+    }
 
 }
