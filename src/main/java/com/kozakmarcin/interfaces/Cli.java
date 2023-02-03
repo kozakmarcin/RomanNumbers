@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Cli implements Inputable {
     private Scanner scanner;
 
-    public Cli(){
+    public Cli() {
         scanner = new Scanner(System.in);
     }
 

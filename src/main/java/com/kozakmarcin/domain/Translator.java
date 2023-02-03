@@ -6,20 +6,20 @@ public class Translator {
     private final Inputable inputable;
 
 
-    public Translator(Inputable inputable){
+    public Translator(Inputable inputable) {
         this.inputable = inputable;
     }
 
-    public void translate(){
+    public void translate() {
         String possibleRomanExpression = inputable.getInput();
         String romanExpression = validator.validate(possibleRomanExpression);
         String[] romanExpressionComponents = splitter.split(romanExpression);
         int arabicValue = calculate(romanExpressionComponents);
-        System.out.println("Wartość wyrażenia: " + possibleRomanExpression + " wynosi: " +arabicValue);
+        System.out.println("Wartość wyrażenia: " + possibleRomanExpression + " wynosi: " + arabicValue);
 
     }
 
-    private int calculate(String[] expresion){
+    private int calculate(String[] expresion) {
         RomanToArabic arabicValue = new RomanToArabic(expresion);
         return arabicValue.translator();
     }

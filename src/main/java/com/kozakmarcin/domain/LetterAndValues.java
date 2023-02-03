@@ -10,7 +10,8 @@ public enum LetterAndValues {
     M(1000);
 
     private int value;
-    LetterAndValues(int value){
+
+    LetterAndValues(int value) {
         this.value = value;
     }
 

@@ -8,13 +8,13 @@ class RomanToArabicTest {
     @Test
     void translator() {
         // Given
-        String[] input = new String[] {"X","L"};
+        String[] input = new String[]{"X", "L"};
 
         // When
         int romanToArabic = new RomanToArabic(input).translator();
 
         // Expected
-        Assertions.assertEquals(40,romanToArabic);
+        Assertions.assertEquals(40, romanToArabic);
     }
 
     @Test
@@ -28,6 +28,6 @@ class RomanToArabicTest {
         int output = arabicValueTest.arabicValue(input);
 
         //Then
-        Assertions.assertEquals(5,output);
+        Assertions.assertEquals(5, output);
     }
 }

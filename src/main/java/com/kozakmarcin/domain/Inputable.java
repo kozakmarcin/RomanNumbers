@@ -1,6 +1,6 @@
 package com.kozakmarcin.domain;
 
 @FunctionalInterface
-public interface Inputable{
+public interface Inputable {
     String getInput();
 }
