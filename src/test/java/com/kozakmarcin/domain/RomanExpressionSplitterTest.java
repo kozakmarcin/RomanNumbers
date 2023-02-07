@@ -3,15 +3,13 @@ package com.kozakmarcin.domain;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RomanExpressionSplitterTest {
 
     private RomanExpressionSplitter splitter = new RomanExpressionSplitter();
 
 
     @Test
-    void splitRomanExpression() {
+    void splitProperRomanExpression() {
         // Given
         String input = "XXXCDM";
 
@@ -26,4 +24,18 @@ class RomanExpressionSplitterTest {
         Assertions.assertEquals("D", split[4]);
         Assertions.assertEquals("M", split[5]);
     }
+
+    @Test
+    void splitExpressionWithIncorectLetters(){
+        // Given
+        String input = "ABEF";
+
+        // When
+        String[] split = splitter.split(input);
+
+        // Then
+        Assertions.assertEquals(0 ,split.length);
+    }
+
+
 }
