@@ -13,7 +13,6 @@ public class Cli implements Inputable {
 
     @Override
     public String getInput() {
-        System.out.println("Input a roman number: ");
         return scanner.next().toUpperCase();
     }
 }

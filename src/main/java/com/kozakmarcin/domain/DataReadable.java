@@ -1,2 +1,8 @@
-package com.kozakmarcin.domain;public interface Readable {
+package com.kozakmarcin.domain;
+
+import java.util.List;
+
+@FunctionalInterface
+public interface DataReadable {
+    List<String> getData();
 }
