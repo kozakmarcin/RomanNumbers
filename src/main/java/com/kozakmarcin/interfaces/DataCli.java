@@ -3,20 +3,21 @@ package com.kozakmarcin.interfaces;
 import com.kozakmarcin.domain.Inputable;
 
 import java.util.List;
+import java.util.Stack;
 
 public class DataCli implements Inputable {
-    private List<String> data;
+    private Stack<String> stackedData;
 
     public DataCli(List<String> data) {
-        this.data = data;
+        stackedData = new Stack<>();
+        stackedData.addAll(data);
     }
 
     @Override
     public String getInput() {
         String rowToTranslate = "";
-        if (!data.isEmpty()) {
-            rowToTranslate = data.get(0).toUpperCase();
-            data.remove(0);
+        if (!stackedData.empty()) {
+            rowToTranslate = stackedData.pop().toUpperCase();
         }
         return rowToTranslate;
     }

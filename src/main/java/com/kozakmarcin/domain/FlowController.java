@@ -4,8 +4,9 @@ import com.kozakmarcin.interfaces.Cli;
 import com.kozakmarcin.interfaces.Fli;
 
 public class FlowController {
-    Cli cli = new Cli();
-    Fli fli = new Fli();
+    private final Cli cli = new Cli();
+    private final Fli fli = new Fli();
+    private final DataBase dataBase = new DataBase();
 
 
     public void flow(){
@@ -19,9 +20,15 @@ public class FlowController {
                     showOptions();
                     input = cli.getInput();
                 }
-                case "2" ->{
+                case "2" -> {
                     System.out.println("Wartości z pliku:");
                     new DataFromFileTranslator(fli).dataTranslate();
+                    showOptions();
+                    input = cli.getInput();
+                }
+                case "3" -> {
+                    System.out.println("Wartości z bazy danych:");
+                    new DataFromBaseTranslator(dataBase).dataTranslate();
                     showOptions();
                     input = cli.getInput();
                 }
@@ -40,8 +47,6 @@ public class FlowController {
         System.out.println("1. Wpisz liczbę w systemie rzymskim");
         System.out.println("2. Pobierz libczby rzymskie z pliku txt");
         System.out.println("3. Pobierz liczby rzymskie z bazy danych");
-        System.out.println("4. Zapisz wyniki do pliku");
-        System.out.println("5. Zapisz wyniki do bazy danych");
         System.out.println("0. Zakończ działanie programu");
     }
 
